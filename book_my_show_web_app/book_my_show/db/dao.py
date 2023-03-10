@@ -10,3 +10,9 @@ class DAO:
             if rows:
                 for row in rows:
                     print(row.id, row.age)
+
+    @classmethod
+    def add_row_to_test_data(cls):
+        data = {"id": 8, "age": 33}
+        with DBEngine.get_db_session() as session:
+            session.add(TestTable(**data))
