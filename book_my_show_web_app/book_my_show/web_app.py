@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from controllers.controller import BookMyShow
 
 
 def add_routes(app: Flask):
@@ -8,10 +9,11 @@ def add_routes(app: Flask):
 
     @app.route("/")
     def welcome():
-        return "<h1>Welcome</h1>"
+        res = BookMyShow.get_users()
+        return res
 
 
-def create_app():
+def create_app() -> Flask:
     app = Flask(__name__)
     add_routes(app=app)
     return app

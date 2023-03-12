@@ -10,6 +10,7 @@ class DAO:
             if rows:
                 for row in rows:
                     print(row.id, row.age)
+        return [{"id": 1, "age": 18}, {"id": 5, "age": 34}]
 
     @classmethod
     def add_row_to_test_data(cls):

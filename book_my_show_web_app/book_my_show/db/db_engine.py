@@ -2,9 +2,7 @@ import os
 import sqlalchemy
 import sqlalchemy.orm as orm
 from contextlib import contextmanager
-from app_config import basedir
-
-db_schema = "book_my_show"
+from app_config import basedir, db_schema
 
 
 class DBEngine:
